@@ -13,7 +13,7 @@ limited to 50 iterations are included to demonstrate of how those common setting
 """
 import os
 #Cloned aviary repo location
-from my_aviary.aviary.models.missions.height_energy_default import phase_info
+from aviary.models.missions.height_energy_default import phase_info
 import aviary.api as av
 
 
@@ -28,7 +28,7 @@ prob = av.AviaryProblem()
 
 # Load aircraft and options data from provided sources
 prob.load_inputs(
-    'my_aviary/aviary/models/aircraft/advanced_single_aisle/advanced_single_aisle_FLOPS.csv', phase_info
+    'aviary/models/aircraft/advanced_single_aisle/advanced_single_aisle_FLOPS.csv', phase_info
 )
 
 prob.check_and_preprocess_inputs()
