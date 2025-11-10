@@ -12,13 +12,13 @@ methods have optional arguments, but none are necessary here. The selection of t
 limited to 50 iterations are included to demonstrate of how those common settings are set.
 """
 import os
-#from aviary.models.missions.height_energy_default import phase_info
-from New_aircraft_testing.aircraft_custom.mission_profile.height_energy_default import phase_info
+#Cloned aviary repo location
+from aviary.models.missions.height_energy_default import phase_info
 import aviary.api as av
 
 
 # === Choose your output directory here ===
-output_dir = r"/Users/ciscoj/Desktop/School/Davis/Grad_school/Classes_Work/Aircraft_Design/mae298-Jackson/New_aircraft_testing/Output_files"  # <-- change this
+output_dir = r"/Users/ciscoj/Desktop/School/Davis/Grad_school/Classes_Work/Aircraft_Design/mae298-Jackson2/Output_files"  # <-- change this
 os.makedirs(output_dir, exist_ok=True)
 os.chdir(output_dir)  # all Aviary output files will now be saved here
 
@@ -28,8 +28,7 @@ prob = av.AviaryProblem()
 
 # Load aircraft and options data from provided sources
 prob.load_inputs(
-    '/Users/ciscoj/Desktop/School/Davis/Grad_school/Classes_Work/Aircraft_Design/mae298-Jackson/New_aircraft_testing/aircraft_custom/aircraft/advanced_single_aisle/advanced_single_aisle_FLOPS.csv', 
-    phase_info
+    'aviary/models/aircraft/advanced_single_aisle/advanced_single_aisle_FLOPS.csv', phase_info
 )
 
 prob.check_and_preprocess_inputs()
